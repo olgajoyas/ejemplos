@@ -1,7 +1,7 @@
 ```mermaid
 flowchart TD
 
-  subgraph TRAD["Infraestructura tradicional"]
+  subgraph TRAD[""]
     A1["Core Banking"]
     A2["CRM"]
     EB["Event Bus / Ingesta"]
@@ -23,7 +23,7 @@ flowchart TD
     HOVER --> CAS
   end
 
-  subgraph GENAI["Infraestructura GenAI"]
+  subgraph GENAI["Ecosistema de agentes"]
     STM["Memoria de sesion"]
     CTX["Contexto del agente - runtime context activo"]
     VEC["memoria de la conversación - a largo"]
