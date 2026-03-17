@@ -16,21 +16,19 @@ flowchart TD
   A5 --> EB
   A6 --> EB
 
-  EB --> CAS[Customer Context Store
-  (persistencia canonica)]
+  EB --> CAS[Customer Context Store - persistencia canonica -]
 
-  CAS --> AGG[Context Aggregator Services
-  (vistas compuestas)]
+  CAS --> AGG[Context Aggregator Services - vistas compuestas -]
 
   AGG --> POLICY[Selection / Policy Engine
-  (exposición, minimización, SLAs)]
+  -exposición, minimización, SLAs-]
 
   POLICY --> APIGW[Context API / Agent Gateway]
 
   subgraph RUNTIME [Runtime / Consumers]
-    R1[Agent Runtime (LLM agents)]
+    R1[Agent Runtime -LLM agents-]
     R2[Blue / Enrutador]
-    R3[Gestor Humano (DWP)]
+    R3[Gestor Humano -DWP-]
     R4[Decision Engines / Risk]
     R5[Analytics / Observability]
   end
@@ -47,7 +45,7 @@ flowchart TD
   HOVER --> CAS
 
   subgraph AUX [Servicios auxiliares]
-    VEC[Vector DB (conversaciones/KB)]
+    VEC[Vector DB -conversaciones/KB-]
     AUDIT[Audit & Observability]
     AUTH[Authz/Authn]
     CACHE[Cache / Edge Views]
