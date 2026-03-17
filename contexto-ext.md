@@ -26,7 +26,7 @@ flowchart TD
   subgraph GENAI["Infraestructura GenAI"]
     STM["Memoria de sesion"]
     CTX["Contexto del agente - runtime context activo"]
-    VEC["Vector DB - memoria semantica"]
+    VEC["memoria de la conversación - a largo"]
     R1["Agent Runtime"]
     ORCH["Agent Orchestrator / Planner"]
     ENRICH["Enrichment / NLU / Extractors"]
