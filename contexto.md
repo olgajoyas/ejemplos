@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
   subgraph SOURCES [Fuentes de verdad]
     A1[Core Banking: cuentas, saldos, movimientos]
@@ -63,3 +64,5 @@ flowchart TD
   style SOURCES fill:#f8f9fa,stroke:#333,stroke-width:1px
   style RUNTIME fill:#ffffff,stroke:#333,stroke-width:1px
   style AUX fill:#fff7e6,stroke:#333,stroke-width:1px
+
+```
