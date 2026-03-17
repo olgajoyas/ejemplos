@@ -5,17 +5,12 @@ flowchart TD
     A5 --> EB
     A6 --> EB
 
-    EB --> CAS[Customer Context Store
-memoria a largo plazo del cliente
-persistencia canonica]
-    CAS --> AGG[Context Aggregator Services
-vistas compuestas]
-    AGG --> POLICY[Selection and Policy Engine
-minimizacion, permisos, SLAs]
+    EB --> CAS[Customer Context Store memoria a largo plazo del cliente persistencia canonica]
+    CAS --> AGG[Context Aggregator Services vistas compuestas]
+    AGG --> POLICY[Selection and Policy Engine minimizacion, permisos, SLAs]
     POLICY --> APIGW[Context API / Agent Gateway]
 
-    HOVER[Handover Service
-traspaso entre agente y humano] --> CAS
+    HOVER[Handover Service traspaso entre agente y humano] --> CAS
     AUDIT[Audit and Observability]
     AUTH[Authz / Authn]
     CACHE[Cache / Edge Views]
@@ -24,18 +19,12 @@ traspaso entre agente y humano] --> CAS
   %% Infraestructura GenAI
   subgraph GENAI [Infraestructura GenAI]
     subgraph AGENTMEM [Memoria y razonamiento del agente]
-      STM[Memoria de sesion
-short-term / conversational memory]
-      CTX[Contexto del agente
-runtime context activo
-lo que el agente usa ahora]
-      VEC[Vector DB
-memoria semantica
-conversaciones y KB]
+      STM[Memoria de sesion short-term / conversational memory]
+      CTX[Contexto del agente runtime context activo lo que el agente usa ahora]
+      VEC[Vector DB memoria semantica conversaciones y KB]
     end
 
-    R1[Agent Runtime
-LLM agents]
+    R1[Agent Runtime LLM agents]
     ORCH[Agent Orchestrator / Planner]
     ENRICH[Enrichment / NLU / Extractors]
   end
@@ -54,8 +43,7 @@ LLM agents]
   %% Consumidores
   subgraph CONSUMERS [Consumidores]
     R2[Blue / Enrutador]
-    R3[Gestor humano
-DWP]
+    R3[Gestor humano DWP]
     R4[Decision Engines / Risk]
     R5[Analytics]
   end
