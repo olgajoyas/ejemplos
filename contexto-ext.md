@@ -17,8 +17,8 @@ flowchart TD
   end
 
   %% Infraestructura GenAI
-  subgraph GENAI [Infraestructura GenAI]
-    subgraph AGENTMEM [Memoria y razonamiento del agente]
+  subgraph GENAI ["Infraestructura GenAI"]
+    subgraph AGENTMEM ["Memoria y razonamiento del agente"]
       STM[Memoria de sesion short-term / conversational memory]
       CTX[Contexto del agente runtime context activo lo que el agente usa ahora]
       VEC[Vector DB memoria semantica conversaciones y KB]
