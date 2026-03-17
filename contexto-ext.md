@@ -1,7 +1,7 @@
 ```mermaid
 flowchart TD
 
-  subgraph TRAD[""]
+  subgraph TRAD["Core"]
     A1["Core Banking"]
     A2["CRM"]
     EB["Event Bus / Ingesta"]
