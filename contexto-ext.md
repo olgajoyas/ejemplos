@@ -5,7 +5,7 @@ flowchart TD
     A1["Core Banking"]
     A2["CRM"]
     EB["Event Bus / Ingesta"]
-    CAS["Customer Context Store - memoria a largo plazo"]
+    CAS["Customer Context Store"]
     AGG["Context Aggregator Services"]
     POLICY["Selection and Policy Engine"]
     APIGW["Context API / Agent Gateway"]
