@@ -17,7 +17,7 @@ flowchart TD
   A6 --> EB
 
   EB --> CAS[Customer Context Store
-  (persistencia canónica)]
+  (persistencia canonica)]
 
   CAS --> AGG[Context Aggregator Services
   (vistas compuestas)]
