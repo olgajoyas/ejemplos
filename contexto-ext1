@@ -1,0 +1,88 @@
+```mermaid
+flowchart TD
+    A3 --> EB
+    A4 --> EB
+    A5 --> EB
+    A6 --> EB
+
+    EB --> CAS[Customer Context Store
+memoria a largo plazo del cliente
+persistencia canonica]
+    CAS --> AGG[Context Aggregator Services
+vistas compuestas]
+    AGG --> POLICY[Selection and Policy Engine
+minimizacion, permisos, SLAs]
+    POLICY --> APIGW[Context API / Agent Gateway]
+
+    HOVER[Handover Service
+traspaso entre agente y humano] --> CAS
+    AUDIT[Audit and Observability]
+    AUTH[Authz / Authn]
+    CACHE[Cache / Edge Views]
+  end
+
+  %% Infraestructura GenAI
+  subgraph GENAI [Infraestructura GenAI]
+    subgraph AGENTMEM [Memoria y razonamiento del agente]
+      STM[Memoria de sesion
+short-term / conversational memory]
+      CTX[Contexto del agente
+runtime context activo
+lo que el agente usa ahora]
+      VEC[Vector DB
+memoria semantica
+conversaciones y KB]
+    end
+
+    R1[Agent Runtime
+LLM agents]
+    ORCH[Agent Orchestrator / Planner]
+    ENRICH[Enrichment / NLU / Extractors]
+  end
+
+  %% Flujos entre tradicional y GenAI
+  APIGW -->|contexto filtrado por caso de uso| CTX
+  CTX --> R1
+  STM --> CTX
+  VEC --> CTX
+  R1 --> STM
+  ORCH --> R1
+  ENRICH --> ORCH
+  ENRICH --> AGG
+  ENRICH --> POLICY
+
+  %% Consumidores
+  subgraph CONSUMERS [Consumidores]
+    R2[Blue / Enrutador]
+    R3[Gestor humano
+DWP]
+    R4[Decision Engines / Risk]
+    R5[Analytics]
+  end
+
+  APIGW --> R2
+  APIGW --> R3
+  APIGW --> R4
+  APIGW --> R5
+
+  R1 -->|handover package| HOVER
+  R2 --> HOVER
+  R3 --> HOVER
+
+  APIGW --> AUTH
+  APIGW --> CACHE
+  APIGW --> AUDIT
+
+  %% Colores
+  style TRAD fill:#e8f1ff,stroke:#2f5ea8,stroke-width:2px
+  style GENAI fill:#f3e8ff,stroke:#7a3db8,stroke-width:2px
+  style CONSUMERS fill:#f8f9fa,stroke:#666,stroke-width:1px
+
+  style CAS fill:#d7e8ff,stroke:#2f5ea8,stroke-width:2px
+  style CTX fill:#ead6ff,stroke:#7a3db8,stroke-width:2px
+  style STM fill:#ead6ff,stroke:#7a3db8,stroke-width:2px
+  style VEC fill:#ead6ff,stroke:#7a3db8,stroke-width:2px
+  style R1 fill:#ead6ff,stroke:#7a3db8,stroke-width:2px
+  style ORCH fill:#ead6ff,stroke:#7a3db8,stroke-width:2px
+
+```
