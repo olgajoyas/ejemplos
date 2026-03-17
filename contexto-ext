@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
     A3 --> EB
     A4 --> EB
@@ -83,3 +84,5 @@ DWP]
   style VEC fill:#ead6ff,stroke:#7a3db8,stroke-width:2px
   style R1 fill:#ead6ff,stroke:#7a3db8,stroke-width:2px
   style ORCH fill:#ead6ff,stroke:#7a3db8,stroke-width:2px
+
+```
