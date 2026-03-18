@@ -1,6 +1,8 @@
 ```mermaid
 flowchart TD
 
+https://arxiv.org/pdf/2506.01056
+
   subgraph TRAD["Core"]
     A1["ODIN (Interacciones)"]
     A2["LOKI (comunicaciones)"]
