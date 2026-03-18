@@ -31,12 +31,8 @@ flowchart TD
     ORCH --> R1
   end
 
-  APIGW --> CTX
-  ENRICH --> AGG
-  ENRICH --> POLICY
-  APIGW --> AUTH
-  APIGW --> CACHE
-  APIGW --> AUDIT
+  ODL --> CTX
+
   R1 --> HOVER
 
 ```
